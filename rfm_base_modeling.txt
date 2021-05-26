@@ -1,0 +1,9 @@
+SELECT DISTINCT Customer_ID 
+, ABS(DATE_DIFF(MAX(Order_Date) , '2018-01-01', DAY)) RECENCY
+, COUNT (DISTINCT Order_ID) FREQUENCY  
+, SUM(Sales) MONETIZATION
+
+FROM `boxwood-airport-304120.Superstore.Orders` 
+
+GROUP BY 1
+
